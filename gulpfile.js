@@ -10,6 +10,8 @@ var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var rev = require('gulp-rev');
 var sass = require('gulp-sass');
+var coffee = require('gulp-coffee');
+var gutil = require('gulp-util');
 var webpack = require('gulp-webpack');
 
 var paths = {
@@ -36,8 +38,14 @@ gulp.task('usemin', function() {
 
 gulp.task('sass', function () {
     return gulp.src('app/scss/**/*.scss')
-        .pipe(sass())
+        .pipe(sass().on('error', gutil.log))
         .pipe(gulp.dest('build/css'));
+});
+
+gulp.task('coffee', function() {
+    gulp.src('app/coffee/**/*.coffee')
+        .pipe(coffee({bare: true}).on('error', gutil.log))
+        .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('webpack', function() {
