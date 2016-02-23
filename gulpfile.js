@@ -4,26 +4,22 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
-var bower = require('gulp-bower');
 var eslint = require('gulp-eslint');
 var usemin = require('gulp-usemin');
 var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var rev = require('gulp-rev');
+var sass = require('gulp-sass');
 var webpack = require('gulp-webpack');
 
 var paths = {
-    js: ['app/js/**/*.js', '!app/js/**/*.min.js'],
-    img: 'app/img/**/*',
-    css: ['app/css/**/*.css', '!app/css/**/*.min.css']
+    appJs: ['app/js/**/*.js', '!app/js/**/*.min.js'],
+    appImg: 'app/img/**/*',
+    appCss: ['app/css/**/*.css', '!app/css/**/*.min.css']
 };
 
 gulp.task('clean', function () {
     return del(['build']);
-});
-
-gulp.task('bower', function () {
-    return bower();
 });
 
 gulp.task('usemin', function() {
@@ -38,10 +34,16 @@ gulp.task('usemin', function() {
         .pipe(gulp.dest('build/'));
 });
 
+gulp.task('sass', function () {
+    return gulp.src('app/scss/**/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('build/css'));
+});
+
 gulp.task('webpack', function() {
-    return gulp.src(paths.js)
+    return gulp.src(paths.appJs)
         .pipe(webpack())
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', ['bower', 'usemin']);
+gulp.task('default', ['usemin']);
