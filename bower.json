@@ -1,0 +1,22 @@
+{
+  "name": "SandboxJS",
+  "description": "Projet JS pour tester plein de trucs en JS",
+  "main": "",
+  "authors": [
+    "Jérémy Buget <jbuget@octo.com>"
+  ],
+  "license": "Apache-2.0",
+  "moduleType": [],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1"
+  }
+}

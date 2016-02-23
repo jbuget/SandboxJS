@@ -1,0 +1,17 @@
+body {
+    margin-top: 60px;
+}
+
+.navbar {
+    background-color: #055a8c;
+    border: none;
+    border-radius: 0;
+}
+.navbar .navbar-brand {
+    color: #ffffff !important;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li.active > a {
+    color: #ffffff;
+}
+
