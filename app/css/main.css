@@ -3,7 +3,8 @@ body {
 }
 
 .navbar {
-    background-color: #055a8c;
+    //background-color: #055a8c;
+    background-color: #ff0000;
     border: none;
     border-radius: 0;
 }
