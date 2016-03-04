@@ -1,7 +1,14 @@
-#sidebar {
-  ul, li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+@import "global";
+@import "sidebar";
+
+.page-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: @sidebar-width;
+  max-width: 900px;
+
+  .page {
+    padding: 10px 100px;
   }
 }
