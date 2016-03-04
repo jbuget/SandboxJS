@@ -1,32 +1,25 @@
 {
   "name": "SandboxJS",
+  "author": "Jérémy Buget",
   "description": "Projet JS pour tester plein de trucs en JS",
   "license": "Apache-2.0",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/jbuget/SandboxJS.git"
   },
+  "private": true,
+  "scripts": {},
+  "dependencies": {},
   "devDependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-coffee": "^2.3.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-google-cdn": "^2.1.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-minify-css": "^1.2.3",
-    "gulp-minify-html": "^1.0.5",
-    "gulp-rev": "^7.0.0",
-    "gulp-sass": "^2.2.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.3",
-    "gulp-usemin": "^0.3.21",
-    "gulp-util": "^3.0.7",
-    "gulp-webpack": "^1.5.0",
-    "gulp-zip": "^3.2.0"
-  },
-  "dependencies": {
-    "coffee-script": "^1.10.0"
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.10.0",
+    "css-loader": "^0.23.1",
+    "jquery": "^2.2.1",
+    "less": "^2.6.1",
+    "less-loader": "^2.2.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }

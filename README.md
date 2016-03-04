@@ -7,6 +7,12 @@
 * Gulp
 * Bower
 
+## NPM Modules
+```bash
+$ npm install -g webpack
+$ npm install -g less
+```
+
 ## Launch the application
 
 ```

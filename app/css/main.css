@@ -1,18 +1,24 @@
-body {
-    margin-top: 60px;
+body, html {
+    padding: 0;
+    margin: 0;
 }
 
-.navbar {
-    //background-color: #055a8c;
-    background-color: #ff0000;
-    border: none;
-    border-radius: 0;
-}
-.navbar .navbar-brand {
-    color: #ffffff !important;
-}
-.navbar-default .navbar-nav > li > a,
-.navbar-default .navbar-nav > li.active > a {
-    color: #ffffff;
+#sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    border-right: 1px solid #CCCCCC;
 }
 
+.page-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    max-width: 900px;
+}
+.page {
+    padding: 10px 100px;
+}
