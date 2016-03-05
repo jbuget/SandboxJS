@@ -1,11 +1,11 @@
-document.write("Webpack for the win!");
+require('./css/clear.css');
+require('./less/styles.less');
+require('./coffee/example.coffee');
+require('./js/vanilla.js');
 
-require("./css/main.css");
-require("./less/styles.less");
-require("./coffee/example.coffee");
-require("./coffee/Directory.coffee");
-require("./coffee/Person.coffee");
+var $ = require('jquery');
+window.$ = $;
+window.jQuery = $;
 
-var $ = require("jquery");
 $(".page-title > h1").html("jQuery is up!");
 
