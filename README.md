@@ -11,6 +11,9 @@
 $ npm install -g webpack
 $ npm install -g less
 $ npm install -g coffee-script
+$ npm install -g karma
+$ npm install -g mocha
+$ npm install -g phantomjs
 ```
 
 ## Launch the application
