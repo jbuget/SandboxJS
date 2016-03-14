@@ -23,4 +23,18 @@ $ npm install # downloads all JS dependencies
 $ webpack # pre-processes static resources
 ```
 
-Then, in a browser, open the file ```./index.html```.
+Then, in a browser, open the file ```./build/index.html```.
+
+## Webpack-dev-server
+
+```bash
+$ npm run dev # runs Webpack in watching mode
+```
+
+Then, in a browser, access the URL http://localhost:8080/webpack-dev-server/index.html
+
+## Testing
+
+```bash
+$ npm test # executes Mocha tests in watching mode
+```

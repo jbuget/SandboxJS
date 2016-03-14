@@ -1,7 +1,5 @@
 // vendors
 require('expose?$!expose?jQuery!jquery');
-require('underscore');
-require('backbone');
 
 // app
 require('./css/clear.css');

@@ -1,13 +1,13 @@
 var React = require('react'),
     ReactDOM = require('react-dom');
 
-(function (ReactDOM) {
+(function () {
 
     'use strict';
 
     ReactDOM.render(
         React.createElement('span', null, 'React is up!'),
-        document.getElementById('react-component')
+        $('#react-component')[0]
     );
 
-})(ReactDOM);
+})();

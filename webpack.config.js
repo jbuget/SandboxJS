@@ -1,41 +1,34 @@
-var path = require('path');
-var webpack = require('webpack');
-var node_modules_dir = path.resolve(__dirname, 'node_modules');
+var webpack = require('webpack'),
+    path = require('path'),
+    node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
     entry: {
         app: [
-            'webpack-dev-server/client?http://localhost:8080',
             path.resolve(__dirname, 'app/entry.js')
         ],
-        vendors: ['jquery', 'underscore', 'backbone']
+        vendors: ['jquery']
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'app.js',
-        publicPath: '/assets/'
+        filename: 'app.js'
     },
     module: {
-        preLoaders: [
-            {test: /\.js$/, loader: "eslint-loader", exclude: [node_modules_dir]}
-        ],
         loaders: [
             {test: /\.css$/, loader: "style!css!autoprefixer", exclude: [node_modules_dir]},
             {test: /\.less$/, loader: "style!css!less", exclude: [node_modules_dir]},
             {test: /\.coffee$/, loader: "coffee-loader", exclude: [node_modules_dir]},
             {test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate", exclude: [node_modules_dir]},
-            {test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=5000&name=img/img-[hash:6].[ext]", exclude: [node_modules_dir]},
-            {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},
-            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-            {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
+            {test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=5000&name=img/img-[hash:6].[ext]", exclude: [node_modules_dir]}
         ]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-        new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
-    ],
-    eslint: {
-        emitError: true
-    }
+        new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+    ]
 };

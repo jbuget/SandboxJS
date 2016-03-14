@@ -1,6 +1,7 @@
-var Article = require('./Article.js');
+var Article = require('./Article'),
+    GreetingService = require('./GreetingService');
 
-(function(Article) {
+(function() {
 
     'use strict';
 
@@ -9,4 +10,7 @@ var Article = require('./Article.js');
     var article = new Article();
     article.loadAndRenderArticle();
 
-})(Article);
+    var greetingService = new GreetingService();
+    console.log(greetingService.sayHello("Mister Mojito"));
+
+})();
