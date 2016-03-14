@@ -1,4 +1,4 @@
-var $ = jQuery = require('jquery'),
+var $ = require('jquery'),
     assert = require('assert'),
     should = require('chai').should(),
     sinon = require('sinon'),
@@ -8,8 +8,9 @@ describe('Article', function () {
 
     describe('#fakeLoadAndRenderArticle()', function () {
 
-        xit('should populate DOM with article data', function () {
+        it('should populate DOM with article data', function () {
             // given
+
             var article = new Article();
 
             // when

@@ -3,15 +3,10 @@ var webpack = require('webpack'),
     node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
-    entry: {
-        app: [
-            path.resolve(__dirname, 'app/entry.js')
-        ],
-        vendors: ['jquery']
-    },
+    entry: path.resolve(__dirname, 'app/entry.js'),
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'app.js'
+        filename: 'bundle.js'
     },
     module: {
         loaders: [
@@ -23,12 +18,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-        new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        })
+        new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
 };

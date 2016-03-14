@@ -1,6 +1,8 @@
-var GreetingService = require('../app/js/GreetingService.js'),
-    assert = require('assert'),
-    should = require('chai').should();
+var assert = require('assert'),
+    should = require('chai').should(),
+    sinon = require('sinon'),
+    GreetingService = require('../app/js/GreetingService'),
+    Maths = require('../app/js/Maths');
 
 describe('GreetingService', function() {
 
@@ -9,22 +11,16 @@ describe('GreetingService', function() {
         // Mocha style
 
         it('[Mocha] should return message with default name when the value is not present', function () {
-            // given
-            var greetingService = new GreetingService();
-
             // when
-            var message = greetingService.sayHello();
+            var message = GreetingService.sayHello();
 
             // then
             assert.equal("Hello dear user", message);
         });
 
         it('[Mocha] should return message with given name when the value is present', function () {
-            // given
-            var greetingService = new GreetingService();
-
             // when
-            var message = greetingService.sayHello("John Doe");
+            var message = GreetingService.sayHello("John Doe");
 
             // then
             assert.equal("Hello John Doe", message);
@@ -33,22 +29,16 @@ describe('GreetingService', function() {
         // Chai style
 
         it('[Chai] should return message with default name when the value is not present', function () {
-            // given
-            var greetingService = new GreetingService();
-
             // when
-            var message = greetingService.sayHello();
+            var message = GreetingService.sayHello();
 
             // then
             message.should.equal('Hello dear user');
         });
 
         it('[Chai] should return message with given name when the value is present', function () {
-            // given
-            var greetingService = new GreetingService();
-
             // when
-            var message = greetingService.sayHello("John Doe");
+            var message = GreetingService.sayHello("John Doe");
 
             // then
             message.should.equal('Hello John Doe');
@@ -56,4 +46,25 @@ describe('GreetingService', function() {
 
     });
 
+    describe('#saySomeMaths()', function() {
+
+        it('should return 7', function () {
+            // when
+            var result = GreetingService.saySomeMaths();
+
+            // then
+            result.should.equal(7);
+        });
+
+        it('should call Maths#sum and Maths#sub', function () {
+            // given
+            var stub = sinon.stub(Maths, 'sum').returns(10);
+
+            // when
+            var result = GreetingService.saySomeMaths();
+
+            // then
+            result.should.equal(10);
+        });
+    });
 });
