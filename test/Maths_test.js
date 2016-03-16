@@ -1,7 +1,6 @@
-var should = require('chai').should(),
-    Maths = require('../app/js/Maths');
-
 describe('Maths', function() {
+
+    var Maths = require('../app/js/Maths');
 
     describe('#add', function() {
 

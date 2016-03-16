@@ -1,5 +1,6 @@
 // Karma configuration
 // Generated on Wed Mar 16 2016 01:36:22 GMT+0100 (CET)
+var webpack = require("webpack");
 
 module.exports = function (config) {
     config.set({
@@ -9,19 +10,13 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['commonjs', 'mocha', 'chai', 'sinon'],
+        frameworks: ['mocha', 'sinon', 'chai'],
 
-        // list of files / patterns to load in the browser
-        files: [
-            {pattern: 'app/js/**/*.js', included: true},
-            {pattern: 'test/**/*_test.js', included: true}
-        ],
-
-        // list of files to exclude
-        exclude: [],
+        // Start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher :
+        browsers: ['PhantomJS'],
 
         // test results reporter to use
-        // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ['progress'],
 
@@ -38,10 +33,6 @@ module.exports = function (config) {
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
 
-        // start these browsers
-        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
-
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false,
@@ -50,11 +41,35 @@ module.exports = function (config) {
         // how many browser should be started simultaneous
         concurrency: 1,
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        // list of files / patterns to load in the browser
+        files: [
+            'test/index.js'
+        ],
+
         preprocessors: {
-            '**/*.js': ['commonjs']
-        }
+            // add webpack as preprocessor
+            'test/index.js': ['webpack', 'sourcemap']
+        },
+
+        webpack: {
+            // webpack configuration
+            devtool: 'inline-source-map'
+        },
+
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            // i. e.
+            noInfo: true
+        },
+
+        plugins: [
+            require("karma-mocha"),
+            require("karma-sinon"),
+            require("karma-chai"),
+            require("karma-phantomjs-launcher"),
+            require("karma-sourcemap-loader"),
+            require("karma-webpack")
+        ]
 
     })
 };

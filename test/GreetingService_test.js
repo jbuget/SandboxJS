@@ -1,10 +1,7 @@
-var assert = require('assert'),
-    should = require('chai').should(),
-    sinon = require('sinon'),
-    GreetingService = require('../app/js/GreetingService'),
-    Maths = require('../app/js/Maths');
-
 describe('GreetingService', function () {
+
+    var GreetingService = require('../app/js/GreetingService'),
+        Maths = require('../app/js/Maths');
 
     describe('#sayHello()', function () {
 
