@@ -1,6 +1,5 @@
-/*
 var should = require('chai').should();
-*/
+
 describe('mocha_sample', function () {
 
     describe('#indexOf()', function () {
