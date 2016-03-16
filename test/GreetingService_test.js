@@ -4,7 +4,7 @@ var assert = require('assert'),
     GreetingService = require('../app/js/GreetingService'),
     Maths = require('../app/js/Maths');
 
-describe('GreetingService', function() {
+describe('GreetingService', function () {
 
     describe('#sayHello()', function () {
 
@@ -46,7 +46,11 @@ describe('GreetingService', function() {
 
     });
 
-    describe('#saySomeMaths()', function() {
+    describe('#saySomeMaths()', function () {
+
+        after(function () {
+            Maths.add.restore();
+        });
 
         it('should return 7', function () {
             // when
@@ -56,9 +60,9 @@ describe('GreetingService', function() {
             result.should.equal(7);
         });
 
-        it('should call Maths#sum and Maths#sub', function () {
+        it('should call Maths#add and Maths#minus', function () {
             // given
-            var stub = sinon.stub(Maths, 'sum').returns(10);
+            var stub = sinon.stub(Maths, 'add').returns(10);
 
             // when
             var result = GreetingService.saySomeMaths();

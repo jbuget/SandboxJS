@@ -2,20 +2,26 @@
 
 var Maths = require('./Maths');
 
-var GreetingService = function () {
+var GreetingService = (function () {
 
     var defaultName = "dear user";
 
+    function getName(name) {
+        return (name ? name : defaultName);
+    }
+
     return {
+
         sayHello: function (name) {
-            return "Hello " + (name ? name : defaultName);
+            return "Hello " + getName(name);
         },
+
         saySomeMaths: function () {
-            var a = Maths.sum(2, 3),
-                b = Maths.sub(10, 8);
-            return Maths.sum(a, b);
+            var a = Maths.add(2, 3),
+                b = Maths.minus(10, 8);
+            return Maths.add(a, b);
         }
     }
-};
+})();
 
-module.exports = new GreetingService();
+module.exports = GreetingService;

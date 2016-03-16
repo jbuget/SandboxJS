@@ -1,24 +1,16 @@
 'use strict';
 
-var Maths = function () {
-
-    function _sum(a, b) {
-        return a + b;
-    }
-
-    function _sub(a, b) {
-        return a - b;
-    }
+var Maths = (function () {
 
     return {
-        sum: function (a, b) {
-            return _sum(a, b);
+        add: function (a, b) {
+            return a + b;
         },
-        sub: function (a, b) {
-            return _sub(a, b);
+        minus: function (a, b) {
+            return a - b;
         }
     }
 
-};
+})();
 
-module.exports = new Maths();
+module.exports = Maths;

@@ -12,8 +12,8 @@ $(function() {
 
     console.log(GreetingService.sayHello("Mister Mojito"));
 
-    console.log("2 + 3 = " + Maths.sum(2, 3));
-    console.log("10 - 8 = " + Maths.sub(10, 8));
+    console.log("2 + 3 = " + Maths.add(2, 3));
+    console.log("10 - 8 = " + Maths.minus(10, 8));
 
 });
 
