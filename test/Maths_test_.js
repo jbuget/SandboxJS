@@ -9,7 +9,7 @@ describe('Maths', function() {
             Maths.add(0, 0).should.equal(0);
             Maths.add(0, 1).should.equal(1);
             Maths.add(1, 0).should.equal(1);
-            Maths.add(1, 1).should.equal(2);
+            Maths.add(1, 1).should.equal(1);
         });
     });
 

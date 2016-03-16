@@ -1,7 +1,5 @@
 'use strict';
 
-var $ = require('jquery');
-
 var Article = function () {
 
     function fetch(callback) {
