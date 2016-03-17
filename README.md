@@ -5,7 +5,7 @@ SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Ba
 ## Prerequesites
 
 * [Node.js](https://nodejs.org) with [NPM](https://www.npmjs.com/)
-* Install following global dependencies :
+* Install following dependencies globally :
 
    ```
    $ npm install -g webpack webpack-dev-server karma karma-cli
@@ -33,11 +33,7 @@ SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Ba
    $ npm start
    ```
 
-5. Access the application
-
-   ```
-   http://localhost:8080
-   ```
+5. Access the application : navigate to [http://localhost:8080](http://localhost:8080)
 
 
 ## Browser auto-refresh
