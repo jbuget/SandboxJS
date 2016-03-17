@@ -1,40 +1,57 @@
 # SandboxJS
 
+SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Babel, Mocha, Karma, etc.
+
 ## Prerequesites
 
-* NodeJS
-* NPM
-* Gulp
+* [Node.js](https://nodejs.org) with [NPM](https://www.npmjs.com/)
+* NPM global dependencies :
+    * webpack
+    * webpack-dev-server
+    * karma
+    * karma-cli
 
-## NPM Modules
-```bash
-$ npm install -g webpack
-$ npm install -g less
-$ npm install -g coffee-script
-$ npm install -g karma
-$ npm install -g mocha
-$ npm install -g phantomjs
+```
+$ npm install -g webpack webpack-dev-server karma karma-cli
 ```
 
-## Launch the application
+## First launch (less than 2 minutes)
 
-```bash
-$ npm install # downloads all JS dependencies
-$ webpack # pre-processes static resources
+1. Clone the project sources
+```
+$ git clone git@github.com:jbuget/SandboxJS.git
 ```
 
-Then, in a browser, open the file ```./build/index.html```.
-
-## Webpack-dev-server
-
-```bash
-$ npm run dev # runs Webpack in watching mode
+2. Download the NPM dependencies
+```
+$ npm install
 ```
 
-Then, in a browser, access the URL http://localhost:8080/webpack-dev-server/index.html
-
-## Testing
-
-```bash
-$ npm test # executes Mocha tests in watching mode
+3. Run the tests
 ```
+$ npm test
+```
+
+4. Launch the application
+```
+$ npm start
+```
+
+5. Access the application
+Go to http://localhost:8080
+
+
+## Browser auto-refresh
+
+If you access http://localhost:8080/webpack-dev-server, a WebSocket is created and the application is running in an
+Iframe, that automatically refresh the page whenever a change is done in the code.
+
+It is because the application is actually running through an Express server, thanks to webpack-dev-server tool, cf. task
+`start` in "scripts" section of `package.json` file.
+
+## Code coverage
+
+The code coverage is automatically calculated and an report is automatically generated during `test` task.
+
+You can access the report in HTML format by opening file `coverage/PhantomJS/index.html` (in case you ran karma tests
+with – default – PhantomJS launcher, cf. karma.conf.js).

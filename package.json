@@ -1,19 +1,20 @@
 {
   "name": "SandboxJS",
   "author": "Jérémy Buget",
-  "description": "Projet JS pour tester plein de trucs en JS",
+  "description": "SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Babel, Mocha, Karma, etc.",
+  "keywords": ["webpack", "javascript", "karma", "mocha", "chai", "sinon", "phantomjs", "istambul", "eslint", "coffeescript", "less", "jquery"],
   "license": "Apache-2.0",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jbuget/SandboxJS.git"
   },
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "webpack -d",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
-    "deploy": "NODE_ENV=production webpack -p",
-    "test": "./node_modules/karma/bin/karma start"
+    "start": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
+    "test": "./node_modules/karma/bin/karma start",
+    "deploy": "NODE_ENV=production webpack -p"
   },
   "dependencies": {},
   "devDependencies": {
