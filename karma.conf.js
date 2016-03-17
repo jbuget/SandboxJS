@@ -1,6 +1,7 @@
 // Karma configuration
 // Generated on Wed Mar 16 2016 01:36:22 GMT+0100 (CET)
-var webpack = require("webpack");
+var webpack = require("webpack"),
+    path = require('path');
 
 module.exports = function (config) {
     config.set({
@@ -18,7 +19,7 @@ module.exports = function (config) {
 
         // test results reporter to use
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
 
         // web server port
         port: 9876,
@@ -47,13 +48,21 @@ module.exports = function (config) {
         ],
 
         preprocessors: {
+            //'app/**/*.js': 'coverage',
             // add webpack as preprocessor
             'test/index.js': ['webpack', 'sourcemap']
         },
 
         webpack: {
             // webpack configuration
-            devtool: 'inline-source-map'
+            devtool: 'inline-source-map',
+            module: {
+                postLoaders: [{
+                    test: /\.js$/,
+                    exclude: /(test|node_modules|bower_components)\//,
+                    loader: 'istanbul-instrumenter'
+                }]
+            }
         },
 
         webpackMiddleware: {
@@ -62,13 +71,20 @@ module.exports = function (config) {
             noInfo: true
         },
 
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
+        },
+
         plugins: [
-            require("karma-mocha"),
-            require("karma-sinon"),
             require("karma-chai"),
+            require("karma-coverage"),
+            require("karma-mocha"),
             require("karma-phantomjs-launcher"),
+            require("karma-sinon"),
             require("karma-sourcemap-loader"),
-            require("karma-webpack")
+            require("karma-webpack"),
+            require('istanbul-instrumenter-loader')
         ]
 
     })
