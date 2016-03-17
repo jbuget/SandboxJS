@@ -39,7 +39,7 @@ SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Ba
 ## Browser auto-refresh
 
 If you access [http://localhost:8080/webpack-dev-server](http://localhost:8080/webpack-dev-server), a WebSocket is created and the application is running in an
-Iframe, that automatically refresh the page whenever a change is done in the code.
+Iframe, that automatically refreshes the page whenever a change is done in the code.
 
 It is because the application is actually running through an Express server, thanks to webpack-dev-server tool, cf. task
 `start` in "scripts" section of `package.json` file.
