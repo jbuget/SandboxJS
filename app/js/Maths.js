@@ -1,5 +1,3 @@
-'use strict';
-
 var Maths = (function () {
 
     return {

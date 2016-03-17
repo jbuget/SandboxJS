@@ -1,5 +1,3 @@
-'use strict';
-
 var Maths = require('./Maths');
 
 var GreetingService = (function () {

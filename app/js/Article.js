@@ -1,5 +1,3 @@
-'use strict';
-
 var Article = function () {
 
     function fetch(callback) {
