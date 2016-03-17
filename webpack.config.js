@@ -12,15 +12,12 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.css$/, loader: "style!css!postcss", exclude: [node_modules_dir]},
-            {test: /\.less$/, loader: "style!css!less", exclude: [node_modules_dir]},
-            {test: /\.coffee$/, loader: "coffee", exclude: [node_modules_dir]},
-            {test: /\.(coffee\.md|litcoffee)$/, loader: "coffee?literate", exclude: [node_modules_dir]},
-            {
-                test: /\.(png|jpg|gif)$/,
-                loader: "url?limit=5000&name=img/img-[hash:6].[ext]",
-                exclude: [node_modules_dir]
-            }
+            {test: /\.css$/, loader: "style!css!postcss", exclude: /node_modules/},
+            {test: /\.less$/, loader: "style!css!less", exclude: /node_modules/},
+            {test: /\.coffee$/, loader: "coffee", exclude: /node_modules/},
+            {test: /\.(coffee\.md|litcoffee)$/, loader: "coffee?literate", exclude: /node_modules/},
+            {test: /\.(png|jpg|gif)$/, loader: "url?limit=5000&name=img/img-[hash:6].[ext]", exclude: /node_modules/},
+            {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
         ]
     },
     plugins: [
