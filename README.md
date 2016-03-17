@@ -11,34 +11,37 @@ SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Ba
     * karma
     * karma-cli
 
-```
-$ npm install -g webpack webpack-dev-server karma karma-cli
-```
+   ```
+   $ npm install -g webpack webpack-dev-server karma karma-cli
+   ```
 
-## First launch (less than 2 minutes)
+## First launch (less than 5 minutes)
 
 1. Clone the project sources
-```
-$ git clone git@github.com:jbuget/SandboxJS.git
-```
+   ```
+   $ git clone git@github.com:jbuget/SandboxJS.git
+   ```
 
 2. Download the NPM dependencies
-```
-$ npm install
-```
+   ```
+   $ npm install
+   ```
 
 3. Run the tests
-```
-$ npm test
-```
+   ```
+   $ npm test
+   ```
 
 4. Launch the application
-```
-$ npm start
-```
+   ```
+   $ npm start
+   ```
 
 5. Access the application
-Go to http://localhost:8080
+
+   ```
+   http://localhost:8080
+   ```
 
 
 ## Browser auto-refresh
