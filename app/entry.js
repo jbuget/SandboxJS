@@ -5,6 +5,6 @@ require('expose?$!expose?jQuery!jquery');
 require('./css/clear.css');
 require('./less/styles.less');
 require('./js/index');
-require('./js/ReactSample.js');
+require('./js/Sidebar.js');
 require('./coffee/example.coffee');
 
