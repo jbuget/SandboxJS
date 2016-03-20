@@ -36,11 +36,5 @@ bower_components
 *.iml
 .idea
 
-build/app.js
-build/app.js.map
-build/vendors.js
-build/vendors.js.map
 build/bundle.js
 build/bundle.js.map
-test/testBundle.js
-test/testBundle.js.map

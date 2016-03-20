@@ -1,6 +1,5 @@
 var webpack = require('webpack'),
     path = require('path'),
-    node_modules_dir = path.resolve(__dirname, 'node_modules'),
     autoprefixer = require('autoprefixer'),
     precss = require('precss');
 

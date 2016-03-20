@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Wed Mar 16 2016 01:36:22 GMT+0100 (CET)
-var webpack = require("webpack"),
-    path = require('path');
+require("webpack");
+require('path');
 
 module.exports = function (config) {
     config.set({

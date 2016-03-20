@@ -2,7 +2,20 @@
   "name": "SandboxJS",
   "author": "Jérémy Buget",
   "description": "SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Babel, Mocha, Karma, etc.",
-  "keywords": ["webpack", "javascript", "karma", "mocha", "chai", "sinon", "phantomjs", "istambul", "eslint", "coffeescript", "less", "jquery"],
+  "keywords": [
+    "webpack",
+    "javascript",
+    "karma",
+    "mocha",
+    "chai",
+    "sinon",
+    "phantomjs",
+    "istambul",
+    "eslint",
+    "coffeescript",
+    "less",
+    "jquery"
+  ],
   "license": "Apache-2.0",
   "version": "1.0.0",
   "repository": {
@@ -11,6 +24,7 @@
   },
   "private": false,
   "scripts": {
+    "lint": "eslint ./app/**/*.js || true",
     "build": "webpack -d",
     "start": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
     "test": "./node_modules/karma/bin/karma start",
@@ -24,6 +38,7 @@
     "css-loader": "^0.23.1",
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
+    "eslint-plugin-react": "^4.2.3",
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
