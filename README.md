@@ -18,22 +18,27 @@ SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Ba
    $ git clone git@github.com:jbuget/SandboxJS.git
    ```
 
-2. Download the NPM dependencies
+2. Enter project folder
+   ```
+   $ cd SandboxJS
+   ```
+
+3. Download the NPM dependencies
    ```
    $ npm install
    ```
 
-3. Run the tests
+4. Run the tests
    ```
    $ npm test
    ```
 
-4. Launch the application
+5. Launch the application
    ```
    $ npm start
    ```
 
-5. Access the application : navigate to [http://localhost:8080](http://localhost:8080)
+6. Access the application : navigate to [http://localhost:8080](http://localhost:8080)
 
 
 ## Browser auto-refresh
