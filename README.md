@@ -2,6 +2,8 @@
 
 SandboxJS is a pet project for testing a lot of JS stuff like Webpack, React, Babel, Mocha, Karma, etc.
 
+[![Dependency Status](https://www.versioneye.com/user/projects/56fceaf5905db1003fe993ab/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56fceaf5905db1003fe993ab)
+
 ## Prerequesites
 
 * [Node.js](https://nodejs.org) with [NPM](https://www.npmjs.com/)
